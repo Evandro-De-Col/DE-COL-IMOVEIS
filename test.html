@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca Dinâmica de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        #productName {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .results-dropdown {
+            position: absolute;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(100% - 42px); /* Tamanho adaptável */
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        .results-dropdown li {
+            padding: 10px;
+            list-style: none;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+        .results-dropdown li:hover {
+            background-color: #f1f1f1;
+        }
+        #details {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        #details img {
+            max-width: 150px;
+            margin-right: 20px;
+        }
+        #details .info {
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Busca Dinâmica de Produtos</h1>
+    <label for="productName">Nome do Produto:</label>
+    <input type="text" id="productName" placeholder="Digite o nome">
+    <ul id="results" class="results-dropdown" style="display: none;"></ul>
+    <div id="details" style="display: none;">
+        <img id="productImage" src="" alt="Imagem do produto">
+        <div class="info">
+            <h2 id="productTitle"></h2>
+            <p><strong>Preço:</strong> $<span id="productPrice"></span></p>
+            <p id="productDescription"></p>
+        </div>
+    </div>
+    <script >
+
+let products = []; // Armazena os produtos carregados
+
+// Função para carregar os produtos da API
+async function loadProducts() {
+    try {
+        const response = await fetch('./bd.html');
+        if (!response.ok) throw new Error('Erro ao carregar produtos');
+        products = await response.json();
+    } catch (error) {
+        console.error('Erro:', error.message);
+    }
+}
+
+// Função para filtrar e exibir os produtos na lista suspensa
+function filterProducts(searchTerm) {
+    const resultsList = document.getElementById('results');
+    const detailsDiv = document.getElementById('details');
+
+    // Limpa os resultados se o campo estiver vazio
+    if (!searchTerm.trim()) {
+        resultsList.style.display = 'none';
+        detailsDiv.style.display = 'none';
+        return;
+    }
+
+    const filteredProducts = products.filter(product =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    if (filteredProducts.length === 0) {
+        resultsList.style.display = 'none';
+        detailsDiv.style.display = 'none';
+        return;
+    }
+
+    resultsList.innerHTML = filteredProducts.map(product => `
+        <li data-id="${product.id}">${product.title}</li>
+    `).join('');
+    resultsList.style.display = 'block';
+}
+
+// Função para exibir os detalhes do produto
+function showDetails(productId) {
+    const product = products.find(p => p.id == productId);
+    if (!product) return;
+
+    const detailsDiv = document.getElementById('details');
+    document.getElementById('productImage').src = product.image;
+    document.getElementById('productTitle').textContent = product.title;
+    document.getElementById('productPrice').textContent = product.price;
+    document.getElementById('productDescription').textContent = product.description;
+
+    detailsDiv.style.display = 'flex';
+}
+
+// Evento para busca dinâmica
+document.getElementById('productName').addEventListener('input', (event) => {
+    const searchTerm = event.target.value;
+    filterProducts(searchTerm);
+});
+
+// Evento para clicar em um item da lista suspensa
+document.getElementById('results').addEventListener('click', (event) => {
+    if (event.target.tagName === 'LI') {
+        const productId = event.target.getAttribute('data-id');
+        showDetails(productId);
+        document.getElementById('results').style.display = 'none'; // Oculta a lista ao clicar
+    }
+});
+
+// Carrega os produtos ao iniciar a página
+loadProducts();
+
+
+    </script>
+</body>
+</html>

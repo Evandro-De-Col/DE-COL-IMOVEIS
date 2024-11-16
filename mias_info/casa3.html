@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decol imóveis</title>
+    <link href="../css/style_casa2.css" rel="stylesheet"/>
+</head>
+<body>
+    <script src="../js/filtra.js"></script>
+   
+        <div class="navbar">
+            <div class="header-inner-content">
+                <img width="10%" src="../assets/logo_marca-removebg.png"> 
+                <nav> 
+                    
+                    <ul class="qb"> 
+                        <li><a class="destivo" href="../index.html">HOME</a></li>
+                        <li ><a class="ativo"  href="../comprar.html">COMPRAR</a></li>
+
+                                            <li><div class="dropdown">
+                            <button class="dropdown-button">SERVIÇOS ▼</button>
+                            <div class="dropdown-content">
+                              <a href="../anuncie.html">Anunciar</a>
+                              <a href="../encontre.html">Encontrar</a>
+                          
+                            </div>
+                          </div></li>
+                    </ul>
+                </nav>
+       
+                <div class="nav-icon-container">
+                    <img src="../assets/menu.png" class="menu-buton">
+                </div>
+            </div>
+        </div> 
+
+        <li class="codgo" style="list-style: none;">  <h2 class="tituloi"> CASA </h2> <h4 >C2303</h4></li>
+     
+      <img class="tituloimg" width="2%" src="../assets/localizador-de-mapa.png">   Cristo Rei, Pato Branco, PR.<h1 class="preco">R$ 350.000,00</h1>
+<hr width="95%">
+        <div class="portfolio-container">
+            <h1>À VENDA NO CRISTO REI</h1>
+            <div class="gallery-container" id="gallery">
+                <!-- As imagens são adicionadas aqui -->
+                <div  class="gallery-item">
+                    <img style="width: 228px; height: 333px;" src="../assets/casa3/IMG-20241025-WA0016.jpg" alt="Imagem 1">
+                </div>
+                <div class="gallery-item">
+                    <img style="width: 228px; height: 333px;" src="../assets/casa3/IMG-20241025-WA0018.jpg" alt="Imagem 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0021.jpg" alt="Imagem 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0001.jpg" alt="Imagem 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0002.jpg" alt="Imagem 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0003.jpg" alt="Imagem 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0004.jpg" alt="Imagem 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0005.jpg" alt="Imagem 8">
+                </div>
+                <div class="gallery-item">
+                    <img style=" height: 333px;" src="../assets/casa3/IMG-20241025-WA0006.jpg" alt="Imagem 9">
+                </div>
+        
+
+                <div class="gallery-item">
+                    <img style="height: 333px;" src="../assets/casa3/IMG-20241025-WA0012.jpg" alt="Imagem 15">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0013.jpg" alt="Imagem 16">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0014.jpg" alt="Imagem 17">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0015.jpg" alt="Imagem 18">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0017.jpg" alt="Imagem 19">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0019.jpg" alt="Imagem 20">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/casa3/IMG-20241025-WA0020.jpg" alt="Imagem 21">
+                </div>
+
+
+                
+            </div>
+            <div class="navigation-buttons">
+                <button onclick="prevImages()">&#10094;</button>
+                <button onclick="nextImages()">&#10095;</button>
+            </div>
+        </div>
+    
+        <script>
+            const gallery = document.getElementById('gallery');
+            const totalItems = document.querySelectorAll('.gallery-item').length;
+            let currentIndex = 0;
+            const itemsPerPage = 3;
+    
+            function updateGalleryPosition() {
+                const slideWidth = gallery.clientWidth / itemsPerPage;
+                gallery.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+    
+            function nextImages() {
+                if (currentIndex < totalItems - itemsPerPage) {
+                    currentIndex++;
+                    updateGalleryPosition();
+                }
+            }
+    
+            function prevImages() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateGalleryPosition();
+                }
+            }
+    
+            // Ajusta a posição ao redimensionar a janela
+            window.addEventListener('resize', updateGalleryPosition);
+        </script>
+
+
+<img class="iconess" width="4%" src="../assets/area.png"> <span class="iconesstext">  ÁREA TOTAL DO TERRENO</span>
+<h4 class="h4"> 450  m²</h4>
+
+<img class="iconess2" width="4%" src="../assets/area.png"> <span class="iconesstext2">  ÁREA TOTAL CONSTRUIDO</span>
+<h4 class="h42"> 60 m²</h4>
+
+<img class="iconess3" width="4%" src="../assets/garagem.png"> <span class="iconesstext3">  VAGAS DE GARAGEM</span>
+<h4 class="h43"> 1</h4>
+
+<img class="iconess" width="4%" src="../assets/quarto.png"> <span class="iconesstext">  QUARTOS</span>
+<h4 class="h4"> 2</h4>
+
+<img class="iconess2" width="4%" src="../assets/banheira.png"> <span class="iconesstext2">  BANHEIROS</span>
+<h4 class="h42"> 2</h4>
+
+
+
+<br><br><br><br>
+<h1> &nbsp   Sobre o Imóvel</h1>
+<h3> &nbsp  &nbsp IMÓVEIS VENDE CASA NO CRISTO REI</h3>
+
+&nbsp  &nbsp CRISTO REI, Pato Branco PR<br><br>
+
+&nbsp  &nbsp Imóvel  02 quartos , sala de estar, banheiro, garagem.<br><br>
+
+
+   
+<div class="card">
+
+    <div class="card-content">
+        <h2>COMPRAR</h2>
+   <h4>VALOR DE VENDA   &nbsp &nbsp   R$ 350.000,00</h4>
+        <ul class="features">
+            <li>Para mais iformações preencha o formulario a baixo.</li>
+            <hr>
+            <form  action="https://formspree.io/f/mjvnjbav"
+            method="post">
+            
+
+         <br>
+            <textarea name="texto_casa_C2303" style="width: 260px; height: 97px;" id="texto" >Olá, 
+tenho interesse em Comprar o imóvel C2303, "CASA BAIRRO CRISTO REI, Pato Branco, PR",
+Aguardo o contato.
+Obrigado.</textarea>
+            <br>
+             <br> <input type="text" placeholder="Nome" style=" height: 30px;" size="33" maxlength="" name="nome"id="nome" required><br> 
+            
+            
+             <br> <input type="email" placeholder="e-mail" style=" height: 30px;" size="33" name="email" id="email" required><br> 
+            
+             <br> <input type="tel" placeholder="telefone" style=" height: 30px;" size="33" maxlength="" id="numero_telefone" name="numero_telefone" required><br> 
+         
+
+            <input class="btn-contact"  type="submit" id="enviar"  value="ENVIAR" size="2" >
+            
+      
+      
+            <label for="email"></label>
+            
+            </form>
+        </ul>
+      
+    </div>
+</div>
+
+
+
+
+
+<div >
+
+<li style="list-style: none;  "><a  class="destivo" href="../comprar.html">Voltar</a></li>
+&nbsp 
+</div>
+        <div class="rodape" >
+
+
+     
+            <img width="10%" src="../assets/logo_marca-removebg-bran.png">   
+              
+
+
+         
+     </div>
+</body>
+</html>

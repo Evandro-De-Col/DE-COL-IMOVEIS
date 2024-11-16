@@ -1,0 +1,639 @@
+
+
+body{
+    
+    margin:0;
+    background-image: url(../assets/Pato-Branco_5-Credito-Adriano-Oltramari-1030x688.jpg);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: top  ;
+
+
+    font-family: arial;
+}
+
+
+
+
+
+
+.rodape{
+    background-color: #000000;
+
+}
+
+.header-inner-content a{
+
+    max-width: 1300px;
+    margin-right: auto;
+}
+
+.navbar{
+    background-color: #53535385;
+    margin:0;
+    padding: 1.8rem;
+    position: sticky;
+    top:0;
+
+    z-index: 99;
+}
+.resulttt{
+    position: relative;
+    display:flex;
+    
+}
+
+.navbar>div {
+        margin:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.qb{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.qa{
+ 
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-icon-container img:first-child{
+    margin-right: 1rem;
+}
+
+.qb {
+    padding-top: 30px;
+}
+
+
+    .contato{
+        max-width: 1300px;
+    margin-right: auto;
+    }
+
+    .qa li a{
+        border: none;
+        padding: 0.8rem 1rem;
+        color: #ffffff;
+        margin-right: 0.9rem;
+       text-decoration: none;
+
+    }
+   .ativo{
+        background-color: #000000;
+        border: none;
+        cursor: pointer;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        color: #ffffff;
+        margin-right: 0.9rem;
+        transition: all 0.8s;
+       text-decoration: none;
+    }
+
+    
+.qb li a{
+   
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    color: #ffffff;
+    margin-right: 0.9rem;
+    transition: all 0.8s;
+    color:#ffffff;
+   text-decoration: none;
+}
+
+.destivo{
+    background-color: #ffffff00;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    color: #000000;
+    margin-right: 0.9rem;
+    transition: all 0.8s;
+    color:#000000;
+   text-decoration: none;
+}
+
+
+.destivo:hover{
+    background-color: #000000;
+    cursor: pointer;
+    color: #ffffff;
+    transition: all 0.8s;
+}
+
+.menu-buton{
+    display: none;
+}
+header{
+    background-color: #53535385;
+
+}
+
+main{
+    background-color: #ffffff;
+}
+
+.gray-background{
+
+    margin:0;
+    background-color: #ffffff;
+}
+
+
+.header-titulo{
+
+    display: flex;
+flex-flow: column;
+align-items: center;
+
+
+}
+.header-titulo h1{
+
+
+  
+    color: #ffffff;
+    padding-top: 250px;
+    font-size: 3.3rem;
+}
+
+.buscar{
+    display: flex;
+    flex-flow: column;
+/*    padding-top: 35px;*/
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #ffffff;
+}
+input{
+    width: 90%;
+    height: 50px;
+    padding-left: 20px;
+    font-size: 22px;
+    border: 1px solid #000000;
+    margin: 2px;
+    border-radius: 8px;
+}
+
+.buscar a{
+    text-decoration: none;
+    color: #000;
+}
+
+.ItemDoAnuncio{
+    
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    display: flex;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100px;
+    width: 99.5%;
+    font-family: Arial, sans-serif;
+    margin: 2px;
+    margin-right: 900px;
+    
+    
+}
+
+.ItemDoAnuncio h2{
+    display: flex;
+    margin-left: 10px;
+    
+}
+
+.ItemDoAnuncio strong{
+    display: flex;
+    margin-left: -372px;
+    margin-top: 50px;
+    
+}
+
+.ItemDoAnuncio p{
+    display: flex;
+    margin-left: -158px;
+    margin-top: 70px;
+    
+}
+
+
+
+.alinhar{
+    font-family: Arial, sans-serif;
+  
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* height: 100vh; */
+}
+
+main h1{
+    font-family: Arial, sans-serif;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+
+main h2{
+    font-family: Arial, sans-serif;
+    color: #6d6d6de8;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+
+.destaques{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.telhado{
+
+    margin-top: 50px;
+
+}
+
+.h1_tit{
+    margin-top: -7px;
+}
+
+.h3_subtit{
+    margin-top: -20px;
+ color: #636363;
+}
+
+.anuncios{
+
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center; 
+}
+
+
+.venda{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #ccc;
+}
+.portfoli{
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+    
+}
+
+.portfolio-container {
+    width: 100%;
+    max-width: 9000px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  
+}
+
+.navigation-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.navigation-buttons button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.navigation-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.gallery-item {
+    min-width: 33.33%;
+    box-sizing: border-box;
+ 
+    padding-right: 5px;
+}
+
+.gallery-item img {
+    width: 100%;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.gallery-item video {
+    width: 100%;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.ajuda{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+margin: 50px;
+}
+
+.anuncio-container {
+    width: 135%;
+    max-width: 1200px;
+    overflow: hidden;
+    position: relative;
+    border: none;
+
+
+ 
+    display: flex;
+    align-items: center;
+}
+
+.anuncio-lista {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+
+
+.anuncio-item {
+    min-width: 33.33%; /* Cada item ocupa 1/3 da largura do contêiner */
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+ 
+}
+
+/* Estilo dos botões */
+.btn {
+    transition:  0.5s ;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 40px;
+   
+}
+
+.btn:hover {
+    transition:  0.5s ;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.btn-prev {
+    left: 10px;
+}
+
+.btn-next {
+    right: 10px;
+}
+
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 350px;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.price {
+    color: #E74C3C;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.features li {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.btn-contact {
+  
+    display: inline-block;
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 12px;
+    text-decoration: none;
+}
+
+.btn-contact :hover{
+    
+    transition:  0.5s ;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-button {
+    background-color: #00000000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .dropdown-button:hover {
+
+    transition:  0.5s ;
+    background-color: rgb(0, 0, 0);
+
+
+  }
+
+  /* Estilo do conteúdo do menu */
+  .dropdown-content {
+ 
+    display: none;
+    position: absolute;
+    background-color: #ffffff00;
+    min-width: 160px;
+
+    z-index: 1;
+    border-radius: 8px;
+
+  }
+
+  .dropdown-content a {
+margin-top: 2px;
+ 
+    color: black;
+  
+    text-decoration: none;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .dropdown-content a:hover {
+
+    transition:  0.5s ;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+
+  /* Mostrar o menu ao clicar */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+
+
+
+
+
+.anuncio-container {
+    width: 100%;
+    max-width: 200000px;
+    overflow: hidden;
+    position: relative;
+
+ 
+
+   
+}
+
+.anuncio-lista {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.anuncio-item {
+    min-width: 33.33%; /* Cada item ocupa 1/3 da largura do contêiner */
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+  margin-right: -4px;
+}
+
+/* Removendo a borda direita do último item */
+.anuncio-item:last-child {
+    border-right: none;
+}
+
+/* Estilos dos botões e do contêiner de botões */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(80% + 40px); /* Largura dos botões somada ao contêiner */
+    max-width: 10000px;
+    margin: 0 auto;
+    position: relative;
+    top: -10px; /* Eleva os botões para ficarem ao lado do contêiner */
+}
+
+.btn {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    margin-top: 22%;
+
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}

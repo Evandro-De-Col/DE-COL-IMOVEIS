@@ -1,0 +1,405 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decol imóveis</title>
+    <link href="./css/style.css" rel="stylesheet"/>
+
+
+
+    
+</head>
+<body >
+
+    
+    <script src="./js/filtra.js"></script>
+    <div class="fundo">
+        <div class="navbar">
+            <div class="header-inner-content">
+              <img width="15%" src="./assets/logo_marca-removebg.png">   
+                <nav> 
+                    <ul class="qa">
+                        <img width="3%" src="./assets/wat.png"></img>   <li> <a href="https://api.whatsapp.com/send?phone=554699424122" target="_blank"> (46)99942-4122</a></li>
+                        <img width="3%" src="./assets/pngwing.com (3).png"></img>   <li><a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Dpt_BR" target="_blank">Face Boock</a></li>
+                        <img width="2.3%" src="./assets/pngwing.com.png"></img>   <li><a href="https://www.instagram.com"  target="_blank">Instagram</a></li>
+                    </ul>
+                    <ul class="qb"> 
+                        <li><a class="ativo" href="./index.html">HOME</a></li>
+                        <li ><a class="destivo"  href="./comprar.html">COMPRAR</a></li>
+
+                        <li><div class="dropdown">
+                            <button class="dropdown-button">SERVIÇOS ▼</button>
+                            <div class="dropdown-content">
+                              <a href="./anuncie.html">Anunciar</a>
+                              <a href="./encontre.html">Encontrar</a>
+                          
+                            </div>
+                          </div></li>
+                    </ul>
+                </nav>
+                <div class="nav-icon-container">
+                    <img src="./assets/menu.png" class="menu-buton">
+                </div>
+            </div>
+        </div> 
+        <header >
+            <div class="header-inner-content">
+                <div class="header-titulo">
+            <h1>SEU SONHO É O MELHOR NEGÓCIO</h1>
+            
+           <div class="buscar">
+            <br>
+           
+     
+            <input type="text" id="productName" placeholder="PESQUISE UM IMÓVEL">
+          <div class="resulttt">  <div id="result"></div> </div>
+            <script >
+        
+        
+        let products = []; // Armazena os produtos carregados
+        
+        // Função para carregar os produtos da API
+        async function loadProducts() {
+            try {
+                const response = await fetch('./bd.html');
+                if (!response.ok) throw new Error('Erro ao carregar produtos');
+                products = await response.json();
+            } catch (error) {
+                document.getElementById('result').innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+            }
+        }
+        
+        // Função para filtrar e exibir os produtos
+        function filterProducts(searchTerm) {
+            const resultDiv = document.getElementById('result');
+        
+            // Limpa os resultados se o campo estiver vazio
+            if (!searchTerm.trim()) {
+                resultDiv.innerHTML = '';
+                return;
+            }
+        
+            const filteredProducts = products.filter(product =>
+                product.title.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        
+            if (filteredProducts.length === 0) {
+                resultDiv.innerHTML = '<p style="color: black;">Nenhum imóvel encontrado.</p>';
+                return;
+            }
+        
+            resultDiv.innerHTML = filteredProducts.map(product => `
+            <a href="${product.link}">
+                <div class="ItemDoAnuncio" >
+                   
+                          <img src="${product.image}" alt="${product.title}" style="width: 100px;"> 
+                    <h2 >${product.title}</h2>
+  
+                    <strong>Preço:${product.price}</strong> 
+      
+         <p> Clique para ver mais iformações</P>
+                </div>
+            </a>
+            `).join('');
+        }
+        
+        // Evento para ativar a busca dinâmica
+        document.getElementById('productName').addEventListener('input', (event) => {
+            const searchTerm = event.target.value;
+            filterProducts(searchTerm);
+        });
+        
+        // Carrega os produtos ao iniciar a página
+        loadProducts();
+        
+            </script>
+     
+    
+        </div>
+                 </div>
+            </div>
+        </div>
+        </header> 
+
+
+        
+        
+<div id="portfolio" class="destaques">
+    <img class="telhado" width="15%" src="./assets/telhado.png">
+    <h1 class="h1_tit">DESTAQUES</h1>
+   <h3 class="h3_subtit">MELHORES OPÇÕES</h3>
+
+<div  class="alinhar"  >
+
+  
+
+    <div class="card">
+        <img src="./assets/casa2/IMG-20241025-WA0029.jpg" alt="Imagem da Casa" class="card-img">
+        <div class="card-content">
+            <h2>Casa à Venda em Pato Branco</h2>
+            <p class="price">R$ 980.000,00</p>
+            <ul class="features">
+                <li>Área total: 380 m²</li>
+                <li>3 quartos</li>
+                <li>2 banheiros</li>
+                <li>4 vaga de garagem</li>
+                <li>Bairro aeroporto</li>
+            </ul>
+            <a  href="./mias_info/casa2.html"> <button  class="btn-contact">VER MAIS</button></a>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <img src="./assets/casa3/IMG-20241025-WA0016.jpg" alt="Imagem da Casa" class="card-img">
+        <div class="card-content">
+            <h2>Casa à Venda em Pato Branco</h2>
+            <p class="price">R$ 350.000,00</p>
+            <ul class="features">
+                <li>Área total: 450 m²</li>
+                <li>2 quartos</li>
+                <li>2 banheiros</li>
+                <li>1 vaga de garagem</li>
+                <li>Bairro Cristo Rei</li>
+            </ul>
+            <a  href="./mias_info/casa3.html"> <button  class="btn-contact">VER MAIS</button></a>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <img src="./assets/casa4/IMG-20241029-WA0033.jpg" alt="Imagem da Casa" class="card-img">
+        <div class="card-content">
+            <h2>Casa à Venda em Pato Branco</h2>
+            <p class="price">R$ 500.000,00</p>
+            <ul class="features">
+                <li>Área total: 300 m²</li>
+                <li>1 quartos</li>
+                <li>1 banheiros</li>
+                <li>2 vaga de garagem</li>
+                <li>Bairro Fraron</li>
+            </ul>
+            <a  href="./mias_info/casa4.html"> <button  class="btn-contact">VER MAIS</button></a>
+        </div>
+    </div>
+    
+
+
+</div>
+</div>
+<div class="venda">
+        <img class="telhado" width="15%" src="./assets/telhado.png">
+        <h1 class="h1_tit">VENDA</h1>
+        <h3 class="h3_subtit">IMÓVEIS RECENTES A VENDA</h3>
+    <div class="alinhar"  >
+    
+        
+        <div class="btn-container">
+            <button class="btn" onclick="rolarAnuncios(-1)">&#10094;</button>
+            <div class="anuncio-container">
+                <div class="anuncio-lista" id="anuncioLista">
+                    <div class="anuncio-item">
+
+                        
+                        <div class="card">
+                            <img src="./assets/casa2/IMG-20241025-WA0029.jpg" alt="Imagem da Casa" class="card-img">
+                            <div class="card-content">
+                                <h2>Casa à Venda em Pato Branco</h2>
+                                <p class="price">R$ 980.000,00</p>
+                                <ul class="features">
+                                    <li>Área total: 380 m²</li>
+                                    <li>3 quartos</li>
+                                    <li>2 banheiros</li>
+                                    <li>4 vaga de garagem</li>
+                                    <li>Bairro aeroporto</li>
+                                </ul>
+                                <a  href="./mias_info/casa2.html"> <button  class="btn-contact">VER MAIS</button></a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="anuncio-item">
+
+
+                        <div class="card">
+                            <img src="./assets/casa3/IMG-20241025-WA0016.jpg" alt="Imagem da Casa" class="card-img">
+                            <div class="card-content">
+                                <h2>Casa à Venda em Pato Branco</h2>
+                                <p class="price">R$ 350.000,00</p>
+                                <ul class="features">
+                                    <li>Área total: 450 m²</li>
+                                    <li>2 quartos</li>
+                                    <li>2 banheiros</li>
+                                    <li>1 vaga de garagem</li>
+                                    <li>Bairro Cristo Rei</li>
+                                </ul>
+                                <a  href="./mias_info/casa3.html"> <button  class="btn-contact">VER MAIS</button></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="anuncio-item">
+
+                        <div class="card">
+                            <img src="./assets/casa1/IMG-20240904-WA0014.jpg" alt="Imagem da Casa" class="card-img">
+                            <div class="card-content">
+                                <h2>Casa à Venda em Pato Branco</h2>
+                                <p class="price">R$ 250.000,00</p>
+                                <ul class="features">
+                                    <li>Área total: 180 m²</li>
+                                    <li>2 quartos</li>
+                                    <li>1 banheiros</li>
+                                    <li>1 vaga de garagem</li>
+                                    <li>Bairro Novo Horizonte</li>
+                                </ul>
+                                <a  href="./mias_info/casa1.html"> <button  class="btn-contact">VER MAIS</button></a>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+                    <div class="anuncio-item">
+
+
+
+                        <div class="card">
+                            <img src="./assets/terreno1/IMG-20241025-WA0027.jpg" alt="Imagem da Casa" class="card-img">
+                            <div class="card-content">
+                                <h2>Terreno à Venda em Pato Branco</h2>
+                                <p class="price">R$ 330.000,00</p>
+                                <ul class="features">
+                                    <li>Área total: 360 m²</li>
+                                    <li>Com projeto aprovado de casa de 100 m²</li>
+                                    <li>Bairro Cristo Rei</li>
+                                    <li>&nbsp</li>
+                                    <li>&nbsp</li>
+                                    
+                                </ul>
+                                <a  href="./mias_info/terreno1.html"> <button  class="btn-contact">VER MAIS</button></a>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+                    <div class="anuncio-item">
+
+  
+                        <div class="card">
+                            <img src="./assets/casa4/IMG-20241029-WA0033.jpg" alt="Imagem da Casa" class="card-img">
+                            <div class="card-content">
+                                <h2>Casa à Venda em Pato Branco</h2>
+                                <p class="price">R$ 500.000,00</p>
+                                <ul class="features">
+                                    <li>Área total: 300 m²</li>
+                                    <li>1 quartos</li>
+                                    <li>1 banheiros</li>
+                                    <li>2 vaga de garagem</li>
+                                    <li>Bairro Fraron</li>
+                                </ul>
+                                <a  href="./mias_info/casa4.html"> <button  class="btn-contact">VER MAIS</button></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="anuncio-item">
+
+  
+                        <div class="card">
+                            <img src="./assets/terreno2/IMG-20241029-WA0037.jpg" alt="Imagem da Casa" class="card-img">
+                            <div class="card-content">
+                                <h2>Terreno à Venda em Pato Branco</h2>
+                                <p class="price">R$ 120.000,00</p>
+                                <ul class="features">
+                                    <li>Área total: 360 m²</li>
+                                    <li>Bairro São Cristóvão</li>
+                                    <li>&nbsp </li>
+                                    <li>&nbsp </li>
+                                    <li>&nbsp </li>
+                                </ul>
+                                <a  href="./mias_info/terro2.html"> <button  class="btn-contact">VER MAIS</button></a>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="rolarAnuncios(1)">&#10095;</button>
+        </div>
+
+
+      
+  
+    </div>
+    
+ 
+</div>
+
+<div class="ajuda">
+
+    <img style="margin-top: -5px;" class="telhado" width="15%" src="./assets/telhado.png">
+    <h1 class="h1_tit">AJUDA</h1>
+    <h3 class="h3_subtit">PRECISA DE AJUDA?</h3>
+<div class="alinhar"  >
+
+
+
+  
+    <div class="card">
+
+        <div class="card-content">
+            <h2>O que você procura?</h2>
+            <br>
+            <ul class="features">
+                <li>Não encontrou seu imóvel? Nós </li>
+                <li>    encontramos pra você, conte</li>
+                <li>   nos um pouco do que você</li>
+                <li>    procura. </li>
+          
+            </ul>
+            <a  href="./encontre.html"> <button  class="btn-contact">O QUE VOCÊ PROCURA</button></a>
+        </div>
+    </div>
+
+    &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+  
+    <div class="card">
+
+        <div class="card-content">
+            <h2>Anuncie seu imóvel</h2>
+           <br>
+            <ul class="features">
+                <li>Receba uma assessoria completa</li>
+                <li>   em todas as etapas da Venda ou</li>
+                <li>  Aluguel do seu imóvel.</li>
+                <li>     &nbsp</li>
+            </ul>
+            <a  href="./anuncie.html"> <button  class="btn-contact">O QUE VOCÊ PROCURA</button></a>
+        </div>
+    </div>
+</div>
+      
+</div>
+
+
+
+
+
+
+      <div class="rodape" >
+          <img width="15%" src="./assets/logo_marca-removebg-bran.png"> 
+     </div>
+
+
+   
+     
+     
+</body>
+</html>
